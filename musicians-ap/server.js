@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const PORT = 8000
-
+const herokuPort = process.env.PORT
 gospleMusicians ={
   'chriswilbeck': {
     'age': '34',
@@ -57,6 +57,6 @@ app.get('/api', (request,response) =>{
 
 
 
-app.listen(PORT,()=>{
+app.listen(herokuPort || PORT,()=>{
     console.log(`Server is running on port ${PORT}!!!, better go catch it`)
 })
